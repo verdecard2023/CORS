@@ -1,1 +1,1 @@
-# Testing for Subdomain takeover
+# CORS - POC
