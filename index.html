@@ -15,7 +15,7 @@
                  document.getElementById("demo").innerHTML = alert(this.responseText);
                  }
              };
-              xhr.open("POST",
+              xhr.open("GET",
                        "www.deribit.com/api/v2", true);
              xhr.withCredentials = true;
              xhr.send();
